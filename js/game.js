@@ -2,7 +2,7 @@ var game = new Phaser.Game(800, 600, Phaser.CANVAS,'', { preload: preload, creat
 
 function preload() { //ładowanie zasobów
     game.load.image('ball', 'img/ball.png');
-    game.load.image('background', 'img/plaza1.jpg');
+    game.load.image('background', 'img/tlo.jpg');
     game.load.image('platform', 'img/platform.jpg');
     game.load.image('platform2', 'img/platform2.jpg');
     game.load.image('slup', 'img/slup.png');
@@ -32,7 +32,7 @@ var yAxis2 = p2.vec2.fromValues(0, 1);
 function create() { //tworzenie obiektów
     game.physics.startSystem(Phaser.Physics.P2JS);
 
-    game.physics.p2.gravity.y = 200;
+    game.physics.p2.gravity.y = 500;
     //game.physics.p2.world.defaultContactMaterial.friction = 1.5;
     //game.physics.p2.restitution = 0.8;
 
@@ -121,11 +121,11 @@ function update() { //pętla główna  gry
     player2.body.velocity.x  = 0;
 
     if (cursors.left.isDown) {
-        player.body.velocity.x  = -150;
+        player.body.velocity.x  = -350;
         player.animations.play('left');
     }
     else if (cursors.right.isDown) {
-        player.body.velocity.x  = 150;
+        player.body.velocity.x  = 350;
         player.animations.play('right');
     }
     else {
@@ -139,7 +139,7 @@ function update() { //pętla główna  gry
 
     if (cursors.up.isDown && game.time.now > jumpTimer && checkIfCanJump())
     {
-        player.body.moveUp(300);
+        player.body.moveUp(500);
         jumpTimer = game.time.now + 750;
     }
 
