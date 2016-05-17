@@ -104,8 +104,8 @@ function create() { //tworzenie obiektów
     platforma.body.onBeginContact.add(ball_platformaHit, this);
     platforma2.body.onBeginContact.add(ball_platforma2Hit, this);
 
-    scoreText = game.add.text(16, 16, 'Score: 0', { fontSize: '30px', fill: '#000' });
-    scoreText2 = game.add.text(650, 16, 'Score: 0', { fontSize: '30px', fill: '#000' });
+    scoreText = game.add.text(16, 16, 'Score: 0', { font:'30px Verdana, cursive',  fill: '#FF2828' });
+    scoreText2 = game.add.text(650, 16, 'Score: 0', { font: '30px Verdana, cursive', fill: '#FF2828' });
 
 
 
